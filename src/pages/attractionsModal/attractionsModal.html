@@ -1,9 +1,7 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title text-center>
-      PRTravel
-    </ion-title>
-    <ion-buttons start>
+    <ion-title text-center style="font-family: Georgia;font-size: 25px;">PRTravel</ion-title>
+    <ion-buttons end>
       <button ion-button (click)="dismiss()">
         <span ion-text color="primary" showWhen="ios">Cancel</span>
         <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
@@ -47,14 +45,19 @@
       </ion-item>
     </ion-list>
 
-    <ion-list *ngSwitchCase="'pictures'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Luna</h2>
-      </ion-item>
-    </ion-list>
+    <ion-grid *ngSwitchCase="'pictures'">
+      <ion-row>
+        <ion-col col-4>
+          <img src="assets/imgs/flamenco.jpg"/>
+        </ion-col>
+        <ion-col col-4>
+          <img src="assets/imgs/flamenco.jpg"/>
+        </ion-col>
+        <ion-col col-4>
+          <img src="assets/imgs/flamenco.jpg"/>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
     <ion-list *ngSwitchCase="'reviews'">
       <ion-item>
