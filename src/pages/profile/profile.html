@@ -23,22 +23,17 @@
 
   <ion-card>
 
-    <img src="assets/img/bjork-live.jpg"/>
+    <img src="../../assets/imgs/Bobby.jpg"/>
 
     <ion-card-content>
       <ion-card-title>
-        Björk
+        Bobby
       </ion-card-title>
       <p>
-        Björk first came to prominence as one of the lead vocalists of the avant pop Icelandic sextet the Sugarcubes, but when...
+        I'm just an artist that enjoys a good roadtrip and the great outdoors!
+        <br\> | 46 | I live Where you vacation | 
       </p>
     </ion-card-content>
-
-    <ion-item>
-      <ion-icon name='musical-notes' item-start style="color: #d03e84"></ion-icon>
-      Albums
-      <ion-badge item-end>9</ion-badge>
-    </ion-item>
 
     <ion-item>
       <ion-icon name='logo-twitter' item-start style="color: #55acee"></ion-icon>
@@ -46,20 +41,22 @@
       <ion-badge item-end>260k</ion-badge>
     </ion-item>
 
+    <div style="padding-top: 8%">
+      <ion-segment [(ngModel)]="attractionOptions">
+        <ion-segment-button value="location"> <!--Change these things buddy-->
+          Bucketlist
+        </ion-segment-button>
+        <ion-segment-button value="pictures"> <!--Change these things buddy-->
+          Albums
+        </ion-segment-button>
+        <ion-segment-button value="reviews"> <!--Change these things buddy-->
+          Pots
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    
   </ion-card>
 
-  <div padding>
-    <ion-segment [(ngModel)]="attractionOptions">
-      <ion-segment-button value="location">
-        Location
-      </ion-segment-button>
-      <ion-segment-button value="pictures">
-        Pictures
-      </ion-segment-button>
-      <ion-segment-button value="reviews">
-        Reviews
-      </ion-segment-button>
-    </ion-segment>
-  </div>
+  
 
 </ion-content>
