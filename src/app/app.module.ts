@@ -8,7 +8,7 @@ import { AttractionsPage } from '../pages/attractions/attractions';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ModalContentPage } from '../pages/attractionsModal/attractionsModal';
-
+import { ProfilePage } from "../pages/profile/profile";
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -19,7 +19,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AttractionsPage,
     HomePage,
     TabsPage,
-    ModalContentPage
+    ModalContentPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AttractionsPage,
     HomePage,
     TabsPage,
-    ModalContentPage
+    ModalContentPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
