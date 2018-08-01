@@ -38,9 +38,8 @@ export class AttractionsPage {
     ];
   }
 
-  openModal(characterNum) {
-
-    let modal = this.modalCtrl.create(ModalContentPage, characterNum);
+  openModal(attraction) {
+    let modal = this.modalCtrl.create(ModalContentPage, attraction);
     modal.present();
   }
 

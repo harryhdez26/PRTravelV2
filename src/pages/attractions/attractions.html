@@ -13,7 +13,7 @@
 <ion-content>
   <ion-list>
     <ion-item style="height: 95px;" *ngFor="let attraction of attractions">
-      <div ion-item no-lines no-padding (click)="openModal({charNum: 0})">
+      <div ion-item no-lines no-padding (click)="openModal(attraction)">
         <ion-thumbnail item-start>
           <img src="{{attraction.img}}">
         </ion-thumbnail>
