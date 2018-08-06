@@ -1,8 +1,8 @@
 {
   "name": "PRTravel",
-  "app_id": "3535dc35",
-  "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "type": "ionic-angular",
+  "pro_id": "3535dc35"
 }

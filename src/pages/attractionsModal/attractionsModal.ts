@@ -39,7 +39,7 @@ export class ModalContentPage {
       reviewTS: "10:12 AM"
     }];
   }
-
+  
   dismiss() {
     this.viewCtrl.dismiss();
   }

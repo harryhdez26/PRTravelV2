@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { ModalContentPage } from '../attractionsModal/attractionsModal';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'page-attractions',
@@ -11,31 +12,14 @@ export class AttractionsPage {
 
   constructor(
   	public navCtrl: NavController,
-  	public modalCtrl: ModalController
+  	public modalCtrl: ModalController,
+    public httpClient: HttpClient
   ) {
-    this.attractions = [
-      {
-        name:"Flamenco Beach",
-        town:"Culebra",
-        img:"assets/imgs/flamenco.jpg"
-      }, {
-        name:"Las Cascadas Water Park",
-        town:"Aguadilla",
-        img:"assets/imgs/cascadas.jpg"
-      }, {
-        name:"Toro Verde",
-        town:"Orocovis",
-        img:"assets/imgs/toroverde.jpg"
-      }, {
-        name:"El Yunque National Forest",
-        town:"Rio Grande",
-        img:"assets/imgs/yunque.jpg"
-      }, {
-        name:"Caja de Muertos Island",
-        town:"Ponce",
-        img:"assets/imgs/cajademuertos.jpg"
-      }
-    ];
+
+    this.httpClient.get('https://5e2eiaiuhb.execute-api.us-east-1.amazonaws.com/DEV/getattractions')
+    .subscribe((attractions) => {
+      this.attractions = attractions
+    });
   }
 
   openModal(attraction) {
