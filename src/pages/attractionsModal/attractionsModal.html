@@ -13,17 +13,17 @@
 <ion-content class="card-background-page">
 
   <ion-card>
-    <img src="assets/imgs/flamenco.jpg"/>
-    <div class="card-title">Flamenco Beach</div>
+    <img src="{{img}}"/>
+    <div class="card-title">{{name}}</div>
     <div class="card-subtitle">
-      <ion-icon name="pin"></ion-icon> Culebra
+      <ion-icon name="pin"></ion-icon> {{town}}
     </div>
 
   </ion-card>
-  
-  <div padding>
+
+  <div>
     <ion-segment [(ngModel)]="attractionOptions">
-      <ion-segment-button value="location">
+      <ion-segment-button (click)="initMap()" value="location">
         Location
       </ion-segment-button>
       <ion-segment-button value="pictures">
@@ -36,35 +36,32 @@
   </div>
 
   <div [ngSwitch]="attractionOptions">
-    <ion-list *ngSwitchCase="'location'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-puppy-1.jpg">
-        </ion-thumbnail>
-        <h2>Ruby</h2>
-      </ion-item>
-    </ion-list>
+    <div *ngSwitchCase="'location'">
+      <div style="height: 400px; width: 100%;" id="map"></div>
+    </div>
 
     <ion-grid *ngSwitchCase="'pictures'">
       <ion-row>
         <ion-col col-4>
-          <img src="assets/imgs/flamenco.jpg"/>
+          <img src="{{img}}"/>
         </ion-col>
         <ion-col col-4>
-          <img src="assets/imgs/flamenco.jpg"/>
+          <img src="{{img}}"/>
         </ion-col>
         <ion-col col-4>
-          <img src="assets/imgs/flamenco.jpg"/>
+          <img src="{{img}}"/>
         </ion-col>
       </ion-row>
     </ion-grid>
 
     <ion-list *ngSwitchCase="'reviews'">
-      <ion-item>
-        <ion-thumbnail item-start>
-          <img src="img/thumbnail-kitten-1.jpg">
-        </ion-thumbnail>
-        <h2>Review</h2>
+      <ion-item *ngFor="let review of reviews">
+        <ion-avatar item-start>
+          <img src="{{review.userImg}}">
+        </ion-avatar>
+        <h2><b>{{review.userName}}</b></h2>
+        <p>{{review.userReview}}</p>
+        <ion-note item-end>{{review.reviewTS}}</ion-note>
       </ion-item>
     </ion-list>
   </div>

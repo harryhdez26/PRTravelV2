@@ -8,48 +8,38 @@ import {Platform, NavParams, ViewController } from 'ionic-angular';
 })
 
 export class ModalContentPage {
-  character;
+  name;
+  town;
+  img;
+  reviews;
 
   constructor(
     public platform: Platform,
     public params: NavParams,
     public viewCtrl: ViewController
   ) {
-    var characters = [
-      {
-        name: 'Gollum',
-        quote: 'Sneaky little hobbitses!',
-        image: 'assets/img/avatar-gollum.jpg',
-        items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'River Folk' },
-          { title: 'Alter Ego', note: 'Smeagol' }
-        ]
-      },
-      {
-        name: 'Frodo',
-        quote: 'Go back, Sam! I\'m going to Mordor alone!',
-        image: 'assets/img/avatar-frodo.jpg',
-        items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Weapon', note: 'Sting' }
-        ]
-      },
-      {
-        name: 'Samwise Gamgee',
-        quote: 'What we need is a few good taters.',
-        image: 'assets/img/avatar-samwise.jpg',
-        items: [
-          { title: 'Race', note: 'Hobbit' },
-          { title: 'Culture', note: 'Shire Folk' },
-          { title: 'Nickname', note: 'Sam' }
-        ]
-      }
-    ];
-    this.character = characters[this.params.get('charNum')];
-  }
 
+    this.name = this.params.get('name');
+    this.town = this.params.get('town');
+    this.img = this.params.get('img');
+    this.reviews = [{
+      userImg: "assets/imgs/user.png",
+      userName: "Juan Hernandez",
+      userReview: "This place is awesome!",
+      reviewTS: "3:34 PM"
+    }, {
+      userImg: "assets/imgs/user.png",
+      userName: "Roberto Cortez",
+      userReview: "I want to go again!",
+      reviewTS: "1:24 PM"
+    }, {
+      userImg: "assets/imgs/user.png",
+      userName: "Lolita Rodriguez",
+      userReview: "Great place.",
+      reviewTS: "10:12 AM"
+    }];
+  }
+  
   dismiss() {
     this.viewCtrl.dismiss();
   }
